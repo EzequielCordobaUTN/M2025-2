@@ -1,0 +1,101 @@
+# Punto 1
+precios_frutas :dict = {'Banana': 1200, 'Anana': 2500, 'Melón': 3000, 'Uva': 1450}
+precios_frutas['Naranja'] = 1200
+precios_frutas['Manzana'] = 1500
+precios_frutas['Pera'] = 2300
+print(precios_frutas)
+print("--------------------")
+
+# Punto 2
+precios_frutas['Banana'] = 1330
+precios_frutas['Manzana'] = 1700
+precios_frutas['Melón'] = 2800
+print(precios_frutas)
+print("--------------------")
+
+# Punto 3
+lista_frutas :list = list(precios_frutas.keys())
+print(lista_frutas)
+print("--------------------")
+
+# Punto 4
+contactos :dict = {}
+for _ in range(5):
+    nombre :str = input("Nombre: ")
+    print(" ")
+    numero :str = input("Número: ")
+    contactos[nombre] = numero
+
+consulta :str = input("Consultar nombre: ")
+print(contactos.get(consulta, "No existe"))
+print("--------------------")
+
+# Punto 5
+frase :str = input("Frase: ")
+palabras :list = frase.split()
+palabras_unicas :set = set(palabras)
+recuento :dict = {}
+
+for palabra in palabras:
+    recuento[palabra] = recuento.get(palabra, 0) + 1
+
+print("Palabras únicas:", palabras_unicas)
+print(" ")
+print("Recuento:", recuento)
+print("--------------------")
+
+# Punto 6
+alumnos :dict = {}
+for _ in range(3):
+    nombre :str = input("Nombre del alumno: ")
+    print(" ")
+    notas :tuple = tuple(int(input(f"Nota {i+1}: ")) for i in range(3))
+    alumnos[nombre] = notas
+
+for nombre, notas in alumnos.items():
+    promedio :float = sum(notas) / len(notas)
+    print(f"{nombre}: {promedio:.2f}")
+print("--------------------")
+
+# Punto 7
+parcial1 :set = {1, 2, 3, 4, 5}
+parcial2 :set = {4, 5, 6, 7}
+
+print("Ambos:", parcial1 & parcial2)
+print(" ")
+print("Solo uno:", parcial1 ^ parcial2)
+print(" ")
+print("Al menos uno:", parcial1 | parcial2)
+print("--------------------")
+
+# Punto 8
+stock :dict = {"lapiz": 10, "cuaderno": 5}
+producto :str = input("Producto a consultar: ")
+
+if producto in stock:
+    cantidad :int = int(input("Agregar unidades: "))
+    stock[producto] += cantidad
+else:
+    nuevo :int = int(input("Nuevo producto, cantidad inicial: "))
+    stock[producto] = nuevo
+
+print("Stock actualizado:", stock)
+print("--------------------")
+
+# Punto 9
+agenda :dict = {
+    ("lunes", "10:00"): "Reunión",
+    ("martes", "15:00"): "Clase de inglés"
+}
+
+dia :str = input("Día: ")
+print(" ")
+hora :str = input("Hora: ")
+print("Actividad:", agenda.get((dia, hora), "Sin actividad"))
+print("--------------------")
+
+# Punto 10
+original :dict = {"Argentina": "Buenos Aires", "Chile": "Santiago"}
+invertido :dict = {capital: pais for pais, capital in original.items()}
+print(invertido)
+print("--------------------")
