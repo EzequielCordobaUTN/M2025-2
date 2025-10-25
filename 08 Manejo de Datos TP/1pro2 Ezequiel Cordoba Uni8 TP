@@ -1,17 +1,17 @@
-#Punto 1
+
 with open("productos.txt", "w") as archivo:
     archivo.write("Lapicera,120.5,30\n")
     archivo.write("Cuaderno,250.0,15\n")
     archivo.write("Goma,80.0,50\n")
 
-#Punto 2
+
 with open("productos.txt", "r") as archivo:
     lineas = archivo.readlines()
     for linea in lineas:
         partes = linea.strip().split(",")
         print(f"Producto: {partes[0]} | Precio: ${partes[1]} | Cantidad: {partes[2]}")
 
-#Punto 3
+
 print("\nIngresá productos (nombre,precio,cantidad). Enter vacío para terminar.")
 with open("productos.txt", "a") as archivo:
     while True:
@@ -20,7 +20,7 @@ with open("productos.txt", "a") as archivo:
             break
         archivo.write(nuevo + "\n")
 
-#Punto 4
+
 productos = []
 with open("productos.txt", "r") as archivo:
     for linea in archivo:
@@ -31,7 +31,7 @@ with open("productos.txt", "r") as archivo:
             "cantidad": cantidad
         })
 
-#Punto 5
+
 buscar = input("\nBuscar producto por nombre: ").strip().lower()
 encontrado = False
 for p in productos:
@@ -42,7 +42,7 @@ for p in productos:
 if not encontrado:
     print("Producto no encontrado.")
 
-#Punto 6
+
 with open("productos.txt", "w") as archivo:
     for p in productos:
         linea = f'{p["nombre"]},{p["precio"]},{p["cantidad"]}\n'
