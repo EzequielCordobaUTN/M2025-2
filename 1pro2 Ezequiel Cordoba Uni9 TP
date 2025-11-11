@@ -1,0 +1,97 @@
+#Punto 1
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+limite = int(input("Ingrese un número para calcular factoriales del 1 al n: "))
+for i in range(1, limite + 1):
+    print(factorial(i))
+print("---------------")
+
+#Punto 2
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+limite = int(input("Ingrese una posición para mostrar la serie de Fibonacci hasta esa posición: "))
+for i in range(limite + 1):
+    print(fibonacci(i))
+print("---------------")
+
+#Punto 3
+def potencia(base, exponente):
+    if exponente == 0:
+        return 1
+    else:
+        return base * potencia(base, exponente - 1)
+
+print("Resultado de potencia(2, 5):")
+print(potencia(2, 5))
+print("---------------")
+
+#Punto 4
+def decimal_a_binario(n):
+    if n == 0:
+        return ""
+    else:
+        return decimal_a_binario(n // 2) + str(n % 2)
+
+num = int(input("Ingrese un número decimal para convertir a binario: "))
+binario = decimal_a_binario(num)
+print("Representación binaria:")
+print(binario if binario else "0")
+print("---------------")
+
+#Punto 5
+def es_palindromo(palabra):
+    if len(palabra) <= 1:
+        return True
+    elif palabra[0] != palabra[-1]:
+        return False
+    else:
+        return es_palindromo(palabra[1:-1])
+
+print("¿La palabra 'reconocer' es palíndromo?")
+print(es_palindromo("reconocer"))
+print("---------------")
+
+#Punto 6
+def suma_digitos(n):
+    if n == 0:
+        return 0
+    else:
+        return (n % 10) + suma_digitos(n // 10)
+
+print("Suma de los dígitos de 1234:")
+print(suma_digitos(1234))
+print("---------------")
+
+#Punto 7
+def contar_bloques(n):
+    if n == 1:
+        return 1
+    else:
+        return n + contar_bloques(n - 1)
+
+print("Cantidad de bloques para construir una pirámide de 4 niveles:")
+print(contar_bloques(4))
+print("---------------")
+
+#Punto 8
+def contar_digito(numero, digito):
+    if numero == 0:
+        return 0
+    elif numero % 10 == digito:
+        return 1 + contar_digito(numero // 10, digito)
+    else:
+        return contar_digito(numero // 10, digito)
+
+print("Cantidad de veces que aparece el dígito 2 en el número 12233421:")
+print(contar_digito(12233421, 2))
+print("---------------")
